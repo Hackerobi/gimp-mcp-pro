@@ -1,1 +1,1 @@
-"""MCP Resource providers for live GIMP state."""
+"""Resources for GIMP MCP Pro."""
