@@ -1,1 +1,1 @@
-"""AI guidance prompts for GIMP MCP Pro."""
+"""MCP Prompt templates for AI assistant guidance."""

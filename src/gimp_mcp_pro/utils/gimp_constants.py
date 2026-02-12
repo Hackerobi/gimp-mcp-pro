@@ -55,7 +55,7 @@ BLEND_MODE_MAP: dict[BlendMode, str] = {
     BlendMode.LIGHTEN_ONLY: "Gimp.LayerMode.LIGHTEN_ONLY",
     BlendMode.DIFFERENCE: "Gimp.LayerMode.DIFFERENCE",
     BlendMode.EXCLUSION: "Gimp.LayerMode.EXCLUSION",
-    BlendMode.HUE: "Gimp.LayerMode.HSL_COLOR",
+    BlendMode.HUE: "Gimp.LayerMode.HSL_COLOR",  # GIMP uses HSL_COLOR for hue
     BlendMode.SATURATION: "Gimp.LayerMode.HSV_SATURATION",
     BlendMode.COLOR: "Gimp.LayerMode.HSL_COLOR",
     BlendMode.LUMINOSITY: "Gimp.LayerMode.LUMINANCE",
