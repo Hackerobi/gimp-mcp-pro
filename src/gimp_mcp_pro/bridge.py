@@ -69,10 +69,6 @@ class GimpBridge:
         self._command_id = 0
         self._connected = False
 
-    # ------------------------------------------------------------------
-    # Connection management
-    # ------------------------------------------------------------------
-
     @property
     def connected(self) -> bool:
         return self._connected and self._sock is not None
@@ -94,7 +90,6 @@ class GimpBridge:
                 )
                 time.sleep(delay)
 
-        # Final attempt
         try:
             self._do_connect()
         except Exception as e:
@@ -128,10 +123,6 @@ class GimpBridge:
         """Ensure we have an active connection, reconnecting if needed."""
         if not self.connected:
             self.connect()
-
-    # ------------------------------------------------------------------
-    # Command sending
-    # ------------------------------------------------------------------
 
     def _next_id(self) -> int:
         self._command_id += 1
@@ -182,10 +173,6 @@ class GimpBridge:
             )
 
         return response
-
-    # ------------------------------------------------------------------
-    # Convenience methods
-    # ------------------------------------------------------------------
 
     def execute_python(
         self,
@@ -242,10 +229,6 @@ class GimpBridge:
     def get_gimp_info(self) -> dict[str, Any]:
         """Get GIMP environment information."""
         return self.send_command("get_gimp_info")
-
-    # ------------------------------------------------------------------
-    # Wire protocol
-    # ------------------------------------------------------------------
 
     def _send(self, payload: dict[str, Any]) -> None:
         """Send a JSON payload with length-prefix framing."""
